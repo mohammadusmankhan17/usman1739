@@ -1,0 +1,8 @@
+alert tcp any any -> any any (msg:"DLP Alert - Potential Credit Card Number Detected"; pcre:"/\b(?:\d[ -]*?){13,16}\b/"; sid:1000001; rev:1;)
+
+sudo snort -A console -q -c /etc/snort/snort.conf -i eth0
+
+This is a test transaction.
+Credit Card Number: 1234-5678-9012-3456
+
+cat test.txt | nc <target_ip> 12345
