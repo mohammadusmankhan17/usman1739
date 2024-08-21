@@ -6,3 +6,5 @@ This is a test transaction.
 Credit Card Number: 1234-5678-9012-3456
 
 cat test.txt | nc <target_ip> 12345
+
+sudo snort -q -l /var/log/snort -i ens33 -A console -c /etc/snort/snort.conf
